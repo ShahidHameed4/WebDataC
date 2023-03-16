@@ -1,0 +1,16 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* .hoverbtn{
+    display: none;
+    transition: 1s;
+} */
+
+
+.cell1:hover ~.hoverbtn{
+    display: inline-block;
+    
+    }

@@ -1,0 +1,133 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.3.js"
+        integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+        crossorigin="anonymous"></script>
+    <script>
+        cells=0;
+        $(document).ready(function(){
+           
+            $("#addAgenda").submit(function(){
+                var day = $("#daySelector").val();
+                var time = $("#timeSelector").val();
+                var agenda = $("#agenda").val();
+                //name of column
+                var col = $("#timeSelector").find(":selected").attr("name");
+                var id="#"+col+""+day+"del";
+                var cell = " <div  > <p class= \"cell1\" >"+agenda +"</p>"+ " <button  class=\"hoverbtn\" "+" id="+id+">"+"Delete" +"</button> </div>";
+
+                    console.log(cell);
+                console.log("#"+col+""+day);
+                if( $("#"+col+""+day).html()==" "){
+                    $("#"+col+""+day).html(cell);
+                }
+                else{
+                   
+                }
+                
+
+            });
+            $("#rowAdder").submit(function(){
+                addRow();
+            });
+            $("#colAdder").submit(function(){
+                addCol();
+            });
+
+        });
+
+        function addRow(){
+            var row = $("#row").val();
+            // $("#headerRow").append("<th>"+column+"</th>");
+            if($("#"+row).val()==null){
+            tr=document.createElement("tr");
+            tr.setAttribute("id",row);
+            td=document.createElement("td");
+            td.innerHTML=row;
+            tr.appendChild(td);
+            for(var i=0;i<cells;i++){
+                td=document.createElement("td");
+                td.innerHTML=" ";
+                td.setAttribute("id",(i+1)+""+row);
+                tr.appendChild(td);
+                console.log("id: "+(i+1)+""+row);
+            }
+             $("#table").append(tr);
+            $("#daySelector").append("<option value="+row+">"+row+"</option>");
+            } 
+        }
+        function addCol(){
+            
+            var column = $("#column").val();
+            console.log(column);
+            if($("#"+column).val()==null){
+                cells++;
+                console.log(cells);
+            $("#headerRow").append("<th id="+column+" name="+(cells)+" >"+column+"</th>");
+            var rows = document.getElementById("table").rows;
+            
+            for(var i=1;i<rows.length;i++){
+                td=document.createElement("td");
+                td.innerHTML=" ";
+                td.setAttribute("id",cells+""+rows[i].id);
+                rows[i].appendChild(td);
+                console.log("id: "+cells+""+rows[i].id);
+            }
+            $("#timeSelector").append("<option name="+(cells)+" value="+column+">"+column+"</option>");
+
+        }
+    }
+    </script>
+
+
+
+</head>
+<body>
+    <header>
+
+    </header>
+    <main>
+        <form id="rowAdder" action="javascript:alert( 'success!' );"> 
+            <input type="text" name="row" id="row" placeholder="Day">
+            
+
+
+            <input id="rowSubmit" type="submit" value="Add Row">
+            
+        </form>
+        <form id="colAdder" action="javascript:alert( 'success!' );"> 
+            <input type="text" name="col" id="column" placeholder="Time">
+
+
+            <input id="colSubmit" type="submit" value="Add Column">
+            
+        </form>
+
+        <form id="addAgenda" action="javascript:alert( 'success!' );">
+            <select name="daySelector" id="daySelector">
+                
+            </select>
+            <select name="timeSelector" id="timeSelector">
+                
+            </select>
+            <input type="text" name="agenda" id="agenda" placeholder="add Agenda">
+
+            <input id="agenda" type="submit" value="Add Agenda">
+        </form>
+
+        <table border="1px" id="table">
+            <tr id="headerRow" >
+                <th>Time:</th>
+            </tr>
+            <!-- <tr >
+                <th>Day:</th>
+            </tr> -->
+
+        </table>
+</body>
+</html>

@@ -1,0 +1,42 @@
+*{
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    height: auto;
+
+}
+.card{
+    background-color: #fff;
+    border: 20px solid #e6e6e6;
+    border-radius: 3px;
+    box-shadow: 5 1px 2px rgba(0,0,0,.05);
+    display: flex;
+    padding: 10px;
+    width: 40%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+img{
+    float: right;
+    width: 200px;
+    height: auto;
+    margin: 10px;
+    float: right;
+}
+header{
+    margin: 10px;
+}
+article{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    height: auto;
+}
+footer{
+    margin: 10px;
+}

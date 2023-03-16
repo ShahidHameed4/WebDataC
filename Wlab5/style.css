@@ -1,0 +1,35 @@
+
+*{
+    margin:0;
+    padding:0;
+}
+
+form{
+
+    border: 1px solid #000;
+    background-color: antiquewhite;
+    margin: 20px auto;
+    width: 70%;
+    border-radius: 10px;
+
+}
+/* body{
+    border: 1px solid #000;
+    background-color: antiquewhite;
+    margin: 50px;
+    border-radius: 10px;
+} */
+.card{
+    padding: 20px;
+    border: 1px solid #000;
+    background-color: antiquewhite;
+    margin: 20px auto;
+    width: 70%;
+   
+}
+
+.options{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+}

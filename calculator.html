@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator i200980</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="img"></div>
+
+
+
+
+  <div class="bgtext" align="Center">
+
+
+
+    <div>
+      <input class="display" id="display2" type="text" readonly>
+
+    </div>
+    <div>
+      <input class="display" id="display" type="text" readonly>
+    </div>
+
+    <table cellspacing="10">
+      <tr>
+        <td><Button class="button" id="refresh" onclick="clearOne()">⌫</Button> </td>
+        <td> <Button class="button" id="mod" onclick="mod()">%</Button></td>
+        <td> <Button class="button" id="comb" onclick="comb()">nCr</Button> </td>
+        <td> <Button class="button" id="divBtn" onclick="divBtn()">/</Button> </td>
+
+
+
+
+
+      </tr>
+      <tr>
+        <td><Button class="button" id="btn7" onclick="btn07()">7</Button> </td>
+        <td><Button class="button" id="btn8" onclick="btn08()">8</Button> </td>
+        <td><Button class="button" id="btn9" onclick="btn09()">9</Button> </td>
+        <td><Button class="button" id="prodBtn" onclick="prodBtn()">x</Button> </td>
+
+
+
+
+      </tr>
+      <tr>
+        <td><Button class="button" id="btn4" onclick="btn04()">4</Button> </td>
+        <td><Button class="button" id="btn5" onclick="btn05()">5</Button> </td>
+        <td> <Button class="button" id="btn6" onclick="btn06()">6</Button></td>
+        <td><Button class="button" id="subBtn" onclick="subBtn()">-</Button> </td>
+
+
+
+
+
+      </tr>
+      <tr>
+        <td><Button class="button" id="btn1" onclick="btn01()">1</Button> </td>
+        <td><Button class="button" id="btn2" onclick="btn02()"> 2 </Button> </td>
+        <td><Button class="button" id="btn3" onclick="btn03()">3</Button> </td>
+        <td><Button class="button" id="addBtn" onclick="addBtn()">+</Button> </td>
+
+
+
+
+
+      </tr>
+      <tr>
+        <td><Button class="button" id="perm" onclick="perm()">σ</Button> </td>
+        <td> <Button class="button" id="btn0" onclick="btn00()">0</Button> </td>
+        <td><Button class="button" id="fact" onclick="fact()">x!</Button> </td>
+        <td><Button class="button" id="operation" style="background-color: rgb(107, 191, 239) ;" onclick="basicOperation()">=</Button> </td>
+
+
+
+
+      </tr>
+
+
+
+
+
+
+    </table>
+  </div>
+
+
+
+
+  <script src="calculator.js" charset="utf-8"> </script>
+
+</body>
+
+</html>
