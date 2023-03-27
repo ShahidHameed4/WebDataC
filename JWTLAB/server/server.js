@@ -2,10 +2,10 @@ import express from 'express'
 import cors from 'cors' // important for recieving api calls
 
 import * as dotenv from 'dotenv';
-import userRouter from './User.js'
-import ArticleRouter from './ArticleRoute.js'
+import userRouter from './Routes/User.js'
+import ArticleRouter from './Routes/ArticleRoute.js'
 dotenv.config();
-import connectDB from './db.js'
+import connectDB from './database/db.js'
 connectDB();
 const app = express()
 app.use(cors()) // important for recieving api calls

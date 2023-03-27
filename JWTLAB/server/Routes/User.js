@@ -2,9 +2,9 @@
 import express from 'express'
 import { registerUser,
     loginUser,
-    getMe,profile} from './UserController.js'
+    getMe,profile} from '../Controller/UserController.js'
 
-import protect from "./Middleware.js"
+import protect from "../Middleware/Middleware.js"
 const router = express.Router()
 
 router.post('/create', registerUser)

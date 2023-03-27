@@ -1,7 +1,7 @@
 import express from 'express';
-import Article from './ArticleModel.js';
+import Article from '../Model/ArticleModel.js';
 import { Router } from 'express';
-import protect from './Middleware.js'
+import protect from '../Middleware/Middleware.js'
 
 const router = express.Router();
 // Get all articles
@@ -16,7 +16,7 @@ router.get('/get',protect, async (req, res) => {
 });
 
 // Get a single article by ID
-router.get('/:id',(req, res) => {
+router.get('/:id',protect,(req, res) => {
   
     Article.findById(req.params.id)
         .then(article => res.json(article))
@@ -25,7 +25,7 @@ router.get('/:id',(req, res) => {
 });
 
 // Create a new article
-router.post('/create', async (req, res) => {
+router.post('/create',protect, async (req, res) => {
   const article = new Article({
     title: req.body.title,
     body: req.body.body,
@@ -45,7 +45,7 @@ router.post('/create', async (req, res) => {
 
 
 // Update an article
-router.patch('/update/:id', async (req, res) => {
+router.patch('/update/:id',protect, async (req, res) => {
   if (req.body.title != null) {
     res.article.title = req.body.title;
   }
@@ -74,7 +74,7 @@ router.patch('/update/:id', async (req, res) => {
 });
 
 // Delete an article
-router.delete('/delete/:id', async (req, res) => {
+router.delete('/delete/:id',protect, async (req, res) => {
   try {
     Article.deleteOne({ _id: req.params.id });
     res.json({ message: 'Deleted Article' });
@@ -83,5 +83,7 @@ router.delete('/delete/:id', async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 });
+
+
 
 export default router;

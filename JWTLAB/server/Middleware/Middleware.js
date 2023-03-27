@@ -2,7 +2,7 @@
 
 import jwt from 'jsonwebtoken'
 import asyncHandler from 'express-async-handler'
-import UserInfo from './UserInfo.js'
+import UserInfo from '../Model/UserInfo.js'
 
 
 const protect = asyncHandler(async (req, res, next) => {

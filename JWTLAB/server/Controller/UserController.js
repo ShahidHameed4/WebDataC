@@ -1,4 +1,4 @@
-import User from './UserInfo.js'
+import User from '../Model/UserInfo.js'
 import asyncHandler from 'express-async-handler'
 import bcrypt from 'bcryptjs'
 import jwt from 'jsonwebtoken'
